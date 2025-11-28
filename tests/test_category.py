@@ -1,0 +1,24 @@
+def test_category_init(first_category, second_category):
+    """test category class"""
+    assert first_category.name == "category_n"
+    assert first_category.description == "category_dec"
+    assert len(first_category.product_in_list) == 2
+    assert len(second_category.product_in_list) == 1
+
+    assert first_category.category_count == 2
+    assert second_category.category_count == 2
+
+    assert first_category.all_products_count == 3
+
+
+def test_category_products_property(first_category):
+    assert (
+        first_category.products == "Iphone 15, 210000.0 руб. Остаток: 8 шт.\n"
+        "Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.\n"
+    )
+
+
+def test_category_products_setter(first_category, **product):
+    assert len(first_category.product_in_list) == 2
+    first_category.add_product(product)
+    assert len(first_category.product_in_list) == 3
