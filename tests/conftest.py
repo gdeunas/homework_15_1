@@ -2,6 +2,7 @@ import pytest
 
 from src.category import Category
 from src.product import Product
+from src.product_iterator import ProductIterator
 
 
 @pytest.fixture
@@ -35,3 +36,28 @@ def product():
         price=12.2,
         quantity=10,
     )
+
+
+@pytest.fixture
+def product_with1():
+    return Product(
+        name="product_n1",
+        description="product_dec",
+        price=12.1,
+        quantity=11,
+    )
+
+
+@pytest.fixture
+def product_with2():
+    return Product(
+        name="product_n2",
+        description="product_dec",
+        price=12.2,
+        quantity=12,
+    )
+
+
+@pytest.fixture
+def product_iterator(second_category):
+    return ProductIterator(second_category)

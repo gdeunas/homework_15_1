@@ -22,3 +22,7 @@ def test_category_products_setter(first_category, **product):
     assert len(first_category.product_in_list) == 2
     first_category.add_product(product)
     assert len(first_category.product_in_list) == 3
+
+
+def test_category_str(first_category):
+    assert str(first_category) == "category_n, количество продуктов: 2 шт."
