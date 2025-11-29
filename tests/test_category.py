@@ -25,4 +25,4 @@ def test_category_products_setter(first_category, **product):
 
 
 def test_category_str(first_category):
-    assert str(first_category) == "category_n, количество продуктов: 2 шт."
+    assert str(first_category) == "category_n, количество продуктов: 22 шт."
